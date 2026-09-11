@@ -1,0 +1,96 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #0f172a;
+  color: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px;
+}
+
+.page {
+  width: 100%;
+  max-width: 820px;
+}
+
+.filters-panel {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 16px 20px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+/* Расположение элементов строго в одну строку */
+.filters-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 10px;
+  align-items: center;
+  overflow-x: auto;
+  scrollbar-width: none; /* Скрываем полосу прокрутки в Firefox */
+}
+
+.filters-list::-webkit-scrollbar {
+  display: none; /* Скрываем полосу прокрутки в Chrome/Safari */
+}
+
+.filters-item {
+  flex-shrink: 0;
+}
+
+.filter-btn {
+  background-color: #0f172a;
+  color: #94a3b8;
+  border: 1px solid #334155;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  color: #ffffff;
+  border-color: #475569;
+  background-color: #162032;
+}
+
+/* Активная кнопка */
+.filter-btn--active,
+.filter-btn.active {
+  background-color: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.filter-btn--active:hover,
+.filter-btn.active:hover {
+  background-color: #1d4ed8;
+  border-color: #1d4ed8;
+}
